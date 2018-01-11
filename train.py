@@ -94,7 +94,7 @@ def main(_):
                                 noise_volume=current_settings.background_volume,
                                 noise_frequency=current_settings.background_frequency_train,
                                 time_shift_samples=current_settings.time_shift_samples,
-                                time_shift_frequency_train=current_settings.time_shift_frequency_train)
+                                time_shift_frequency=current_settings.time_shift_frequency_train)
         train_summary, train_accuracy, cross_entropy_value, _, _ = sess.run(
         [
             merged_summaries, evaluation_step, cross_entropy_mean, train_step,
@@ -123,7 +123,7 @@ def main(_):
                                 noise_volume=current_settings.background_volume,
                                 noise_frequency=current_settings.background_frequency_validation,
                                 time_shift_samples=current_settings.time_shift_samples,
-                                time_shift_frequency_train=current_settings.time_shift_frequency_validation)
+                                time_shift_frequency=current_settings.time_shift_frequency_validation)
                 validation_summary, validation_accuracy, conf_matrix = sess.run(
                     [merged_summaries, evaluation_step, confusion_matrix],
                     feed_dict={
